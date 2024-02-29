@@ -1,7 +1,7 @@
 VERSION ?= 1.0.0
 
-BLOOM_DEV_DOCKER = @docker run --name bloom-test  --mount type=bind,source="$(shell pwd)",target=/source_code --env-file ./.env.test --network=bloom_net -p 8501:8501
-BLOOM_PRODUCTION_DOCKER = @docker run --mount type=bind,source="$(shell pwd)",target=/source_code --env-file ./.env --log-driver json-file --log-opt max-size=10M --log-opt max-file=3 --entrypoint /entrypoint.sh
+BLOOM_DEV_DOCKER = @docker run --name bloom-test  -v "$(pwd)/data:/source_code/data" --mount type=bind,source="$(shell pwd)",target=/source_code --env-file ./.env.test --network=bloom_net -p 8501:8501
+BLOOM_PRODUCTION_DOCKER = @docker run -v "$(pwd)/data:/source_code/data" --mount type=bind,source="$(shell pwd)",target=/source_code --env-file ./.env --log-driver json-file --log-opt max-size=10M --log-opt max-file=3 --entrypoint /entrypoint.sh
 
 build:
 	@docker build -t d4g/bloom:${VERSION} --platform linux/amd64  -f docker-env/Dockerfile .
