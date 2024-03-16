@@ -9,38 +9,38 @@ description = "Bloom scrapping application"
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
-autopep8 = "1.5.4"
-pandas = "1.4.4"
-selenium = "4.8.3"
-undetected-chromedriver = "3.4.6"
-openpyxl = "^3.1.0"
-pydantic = "1.10.4"
-pyyaml = "6.0"
-shapely = "2.0.1"
-geopandas = "0.12.2"
-sqlalchemy = "2.0.7"
-alembic = "^1.10.2"
-geoalchemy2 = "^0.13.1"
-psycopg2-binary = "^2.9.6"
-dependency-injector = "^4.41.0"
-dependency_injection = "1.2.0"
-requests = "2.28.1"
-gql = "^3.4.0"
-requests-toolbelt = "^0.10.1"
-slack-sdk = "^3.21.3"
-folium = "^0.14.0"
-matplotlib = "^3.8.0"
-geopy = "^2.4.0"
-streamlit = "^1.27.2"
-streamlit-folium = "^0.15.0"
-python-dotenv = "^1.0.0"
+alembic = "~1.13"
+autopep8 = "~2.0"
+dependency-injector = "~4.41"
+dependency_injection = "~1.2"
+folium = "~0.16"
+GeoAlchemy2 = "~0.14"
+geopandas = "~0.14"
+geopy = "~2.4"
+gql = "~3.5"
+matplotlib = "~3.8"
+openpyxl = "~3.1"
+pandas = "~2.2"
+poetry = "~1.8"
+psycopg2-binary = "~2.9"
+pydantic = "~2.6"
+pydantic-settings = "~2.2"
+python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
+python-dotenv = "~1.0"
+PyYAML = "~6.0"
+requests = "~2.31"
+requests-toolbelt = "~1.0"
+shapely = "~2.0"
+slack-sdk = "~3.27"
+SQLAlchemy = "~2.0"
+streamlit = "~1.32"
+streamlit-folium = "~0.18"
 
 
 [tool.poetry.group.dev.dependencies]
-pre-commit = "^3.0.3"
-ruff = "^0.0.254"
-tox = "^4.4.8"
+pre-commit = "~3.6"
+ruff = "~0.3"
+tox = "~4.14"
 
 [tool.ruff]
 select = [
@@ -74,7 +74,16 @@ select = [
     "W",
     "YTT",
 ]
-ignore = ["A003", "ANN101", "ANN401", "N805", "N818", "PLR0913", "RET504", "RET505"]
+ignore = [
+    "A003",
+    "ANN101",
+    "ANN401",
+    "N805",
+    "N818",
+    "PLR0913",
+    "RET504",
+    "RET505",
+]
 
 fixable = [
     "A",
@@ -126,7 +135,7 @@ exclude = [
     "dist",
     "venv",
     "pages",
-    "tests"
+    "tests",
 ]
 
 line-length = 96
